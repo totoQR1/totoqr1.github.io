@@ -1,1 +1,123 @@
-# totoqr1.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBLOX SECURITY TERMINAL</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: lime;
+            font-family: Consolas, monospace;
+            overflow: hidden;
+        }
+
+        #start {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 30px;
+            background: black;
+            color: lime;
+            border: 2px solid lime;
+            font-family: Consolas, monospace;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #output {
+            display: none;
+            padding: 30px;
+            font-size: clamp(16px, 3vw, 28px);
+            white-space: pre-wrap;
+            height: 100%;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<button id="start">START SECURITY CHECK</button>
+
+<div id="output"></div>
+
+<script>
+const start = document.getElementById("start");
+const output = document.getElementById("output");
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function print(text) {
+    output.textContent += text;
+    output.scrollTop = output.scrollHeight;
+}
+
+async function runPrank() {
+
+    start.style.display = "none";
+    output.style.display = "block";
+
+    // Try to make the page fullscreen after the button is pressed
+    try {
+        await document.documentElement.requestFullscreen();
+    } catch (error) {
+        // Fullscreen may not be available on every phone/browser
+    }
+
+    print("ROBLOX SECURITY TERMINAL\n");
+    print("------------------------\n");
+
+    await sleep(1000);
+
+    print("Connecting to Roblox...\n");
+
+    await sleep(1000);
+
+    for (let i = 1; i <= 5; i++) {
+        print(`Bypassing security layer ${i}/5...\n`);
+        await sleep(700);
+    }
+
+    print("\nACCESS GRANTED\n");
+
+    await sleep(1000);
+
+    print("Downloading Robux...\n");
+
+    await sleep(1000);
+
+    for (let i = 1; i <= 10; i++) {
+
+        const bar =
+            "=".repeat(i) +
+            " ".repeat(10 - i);
+
+        print(`[${bar}] ${i * 10}%\n`);
+
+        await sleep(200);
+    }
+
+    print("\n😂 YOU GOT HACKED!\n");
+    print("and get rick rolled loser\n");
+
+    await sleep(2000);
+
+    // Rickroll
+    window.location.href =
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+
+start.addEventListener("click", runPrank);
+</script>
+
+</body>
+</html>
