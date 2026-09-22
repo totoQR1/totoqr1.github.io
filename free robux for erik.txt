@@ -1,0 +1,91 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROBLOX SECURITY TERMINAL</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: lime;
+            font-family: Consolas, monospace;
+            font-size: 20px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        #output {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="output"></div>
+
+<script>
+const output = document.getElementById("output");
+
+function print(text) {
+    output.textContent += text;
+    output.scrollTop = output.scrollHeight;
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function start() {
+
+    print("ROBLOX SECURITY TERMINAL\n");
+    print("------------------------\n");
+
+    await sleep(1000);
+
+    print("Connecting to Roblox...\n");
+
+    await sleep(1000);
+
+    for (let i = 0; i < 5; i++) {
+        print(`Bypassing security layer ${i + 1}/5...\n`);
+        await sleep(700);
+    }
+
+    print("\nACCESS GRANTED\n");
+
+    await sleep(1000);
+
+    print("Downloading Robux...\n");
+
+    await sleep(1000);
+
+    for (let i = 0; i < 10; i++) {
+
+        const progress =
+            "=".repeat(i + 1) +
+            " ".repeat(9 - i);
+
+        print(`[${progress}] ${(i + 1) * 10}%\n`);
+
+        await sleep(200);
+    }
+
+    print("\n😂 YOU GOT HACKED!\n");
+    print("and get rick rolled loser\n");
+
+    await sleep(2000);
+
+    window.location.href =
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+
+start();
+</script>
+
+</body>
+</html>
+```
